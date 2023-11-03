@@ -17,6 +17,8 @@ const Home = () => {
       <div className='hidden w-1/3 lg:w-1/4 h-full md:flex flex-col gap-6 
       overflow-y-auto '>
   <ProfileCard user={user} />
+  
+  
 
       </div>
 

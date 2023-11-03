@@ -152,7 +152,7 @@ const Register = () => {
             </Link>
           </p>
         </div>
-        {/* RIGHT */}
+        {/* right side ke liye */}
         <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-blue'>
           <div className='relative w-full flex items-center justify-center'>
             <img
