@@ -35,7 +35,27 @@
           "64df39704180b81adfe41d0b",
           "64df39704180b81adfe41d0b",
         ],    
+        verified: true,
+      createdAt: "2023-08-18T09:27:12.064Z",
+      updatedAt: "2023-08-21T06:46:26.798Z",
+      __v: 8,
+      location: "Mumbai, India",
+      profession: "Full-Stack Developer",
+    },
 
+    {
+        _id: "64df424b4a4c0d47b5369f65",
+        firstName: "User",
+        lastName: "One",
+        email: "user!@gmail.com",
+        friends: ["64df3c064180b81adfe41d4b"],
+        views: [],
+        verified: true,
+        createdAt: "2023-08-18T10:04:59.677Z",
+        updatedAt: "2023-08-18T10:09:20.006Z",
+        __v: 1,
+      },
+    ],
 
     ]
 }
