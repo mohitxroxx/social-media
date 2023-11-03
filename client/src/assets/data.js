@@ -2,8 +2,8 @@
 
  export const user ={
     _id: "64df3c064180b81adfe41d4b",
-    firstName: "Code",
-    lastName: "Wave",
+    firstName: "Sachendra",
+    lastName: "Gangwar",
     email: "sachendra@gmail.com",
 
     friends: [
@@ -154,11 +154,11 @@ export const posts = [
       _id: "64e2fe620d7868ecff1a6a86",
       userId: {
         _id: "64df39704180b81adfe41d0b",
-        firstName: "Chris",
-        lastName: "Omar",
+        firstName: "Sachendra",
+        lastName: "Gangwar",
         profileUrl:
           "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
-        location: "New York, USA",
+        location: "Noida, India",
       },
       description: "Hello everyone, this is a new video. check it out. thank you",
       image:
@@ -173,8 +173,8 @@ export const posts = [
       _id: "64e1cdd64baffca670364c8c",
       userId: {
         _id: "64df39704180b81adfe41d0b",
-        firstName: "Love",
-        lastName: "Banks",
+        firstName: "Sachendra",
+        lastName: "Gangwar",
         profileUrl:
           "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
         location: "Mumbai, India",
@@ -301,8 +301,8 @@ export const posts = [
       _id: "64df3ed06c2bd953c7b43172",
       userId: {
         _id: "64df39704180b81adfe41d0b",
-        firstName: "John ",
-        lastName: "Smith",
+        firstName: "Sachin ",
+        lastName: "Gangwar",
         profileUrl:
           "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874453/samples/bike.jpg",
         location: "Mumbai, India",
@@ -359,8 +359,8 @@ export const posts = [
       _id: "64df41304a4c0d47b5369f0d",
       userId: {
         _id: "64df3aec4180b81adfe41d32",
-        firstName: "Akwasi",
-        lastName: "Asante",
+        firstName: "sachendra",
+        lastName: "gangwar",
         profileUrl:
           "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
       },
@@ -372,8 +372,8 @@ export const posts = [
         {
           userId: {
             _id: "64df39704180b81adfe41d0b",
-            firstName: "MTech",
-            lastName: "Solutions",
+            firstName: "Mohit",
+            lastName: "Developer",
             profileUrl:
               "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692299991/SOCIALMEDIA/fvws1unsqytcqketv78w.png",
             location: "Mumbai, India",
