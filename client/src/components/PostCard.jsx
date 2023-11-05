@@ -207,9 +207,21 @@ const getComments =async () => {
             getComments={() => getComments(post?._id)}
           />
 
+           {loading ? (
+            <Loading />
+          ) : comments?.length > 0 ? (
+            comments?.map((comment) => (
+                <div className='w-full py-2' key={comment?._id}>
+                    
+                     </div>
 
+            ))
+          ) : ( <span className='flex text-sm py-4 text-ascent-2 text-center'>
+            No Comments, be first to commit
+          </span>
 
-
+          )}
+           
                     </div>
       )}
 
