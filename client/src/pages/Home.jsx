@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import TopBar from '../components/TopBar'
 import ProfileCard from '../components/ProfileCard'
-import { FriendsCard,CustomButton,EditProfile,Loading,PostCard,TextInput} from '../components'
+import { FriendsCard,CustomButton,EditProfile,Loading,TextInput} from '../components'
 
 import { useState } from 'react'
 import { suggest, requests, posts } from "../assets/data";
@@ -11,7 +11,7 @@ import { NoProfile } from "../assets";
 import { BsFiletypeGif, BsPersonFillAdd } from "react-icons/bs";
 import { BiImages, BiSolidVideo } from "react-icons/bi";
 import { useForm } from "react-hook-form";
-
+import PostCard from '../components/PostCard'
 
 
 
@@ -19,18 +19,17 @@ const Home = () => {
   const {user} =useSelector(state=>state.user)
   const [friendRequest ,setFriendRequest] =useState(requests);
   const [suggestedFriends , setSuggestedFriends] = useState(suggest);
-  // const [errMsg, setErrMsg] = useState("");
-  // const [file, setFile] = useState(null);
-  // const [posting, setPosting] = useState(false);
-  // const [loading, setLoading] = useState(false);
+   const [errMsg, setErrMsg] = useState("");
+   const [file, setFile] = useState(null);
+   const [posting, setPosting] = useState(false);
+   const [loading, setLoading] = useState(false);
 
-  // const { register,handleSubmit,formState: { errors },} = useForm();
+   const { register,handleSubmit,formState: { errors },} = useForm();
 
   const handlePostSubmit = async (data) => {
 
 
   };
-
 
   
   return (
@@ -61,9 +60,7 @@ const Home = () => {
                   className='w-14 h-14 rounded-full object-cover'
                 />
                 <TextInput
-                  styles='w-full rounded-full py-5'
-                  placeholder="What's on your mind...."
-                  name='description'
+                  styles='w-full rounded-full py-5' placeholder="Something in Your Mind..." name='description'
                   register={register("description", {
                     required: "Write something about post",
                   })}
@@ -71,8 +68,7 @@ const Home = () => {
                 />
               </div>
               {errMsg?.message && (
-                <span
-                  role='alert'
+                <span role='alert'
                   className={`text-sm ${
                     errMsg?.status === "failed" ? "text-[#f64949fe]" : "text-[#2ba150fe]"} mt-0.5`}
                 >
@@ -141,17 +137,11 @@ const Home = () => {
               </div>
             </form>
 
-            {loading ? (
-              <Loading />
-            ) : posts?.length > 0 ? (
+            {loading ? ( <Loading /> ) : posts?.length > 0 ? (
               posts?.map((post) => (
                 <PostCard
-                  key={post?._id}
-                  post={post}
-                  user={user}
-                  deletePost={() => {}}
-                  likePost={() => {}}
-                />
+                  key={post?._id}  post={post}   user={user}   deletePost={() => {}}
+                  likePost={() => {}} />
               ))
             ) : (
               <div className='flex w-full h-full items-center justify-center'>
