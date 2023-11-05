@@ -46,9 +46,8 @@ import { useForm } from "react-hook-form";
                 >
                   {reply?.likes?.includes(user?._id) ? (
                     <BiSolidLike size={20} color='blue' />
-                  ) : (
-                    <BiLike size={20} />
-                  )}
+                  ) : ( <BiLike size={20} /> )
+                  }
                   {reply?.likes?.length} Likes
                 </p>
               </div>
