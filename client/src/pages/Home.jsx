@@ -2,26 +2,34 @@ import React from 'react'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import TopBar from '../components/TopBar'
 import ProfileCard from '../components/ProfileCard'
-import { FriendsCard } from '../components'
-import { friends } from '../assets/data'
+import { FriendsCard,CustomButton,EditProfile,Loading,PostCard,TextInput} from '../components'
+
 import { useState } from 'react'
+import { suggest, requests, posts } from "../assets/data";
+import { Link } from 'react-router-dom'
+import { NoProfile } from "../assets";
+import { BsFiletypeGif, BsPersonFillAdd } from "react-icons/bs";
+import { BiImages, BiSolidVideo } from "react-icons/bi";
+import { useForm } from "react-hook-form";
+
+
+
 
 const Home = () => {
   const {user} =useSelector(state=>state.user)
-  const [friendRequest ,setFriendRequest] =useState(friends);
-  const [suggestedFriends , setSuggestedFriends] = useState(friends);
-  const [errMsg, setErrMsg] = useState("");
-  const [file, setFile] = useState(null);
-  const [posting, setPosting] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [friendRequest ,setFriendRequest] =useState(requests);
+  const [suggestedFriends , setSuggestedFriends] = useState(suggest);
+  // const [errMsg, setErrMsg] = useState("");
+  // const [file, setFile] = useState(null);
+  // const [posting, setPosting] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  // const { register,handleSubmit,formState: { errors },} = useForm();
 
-  const handlePostSubmit = async (data) => {};
+  const handlePostSubmit = async (data) => {
+
+
+  };
 
 
   
@@ -42,7 +50,7 @@ const Home = () => {
        {/* center ke liye */}
           <div className='flex-1 h-full bg-primary px-4 flex flex-col gap-6 overflow-y-auto'>
 
-          <form
+         <form 
               onSubmit={handleSubmit(handlePostSubmit)}
               className='bg-primary px-4 rounded-lg'
             >
@@ -66,10 +74,7 @@ const Home = () => {
                 <span
                   role='alert'
                   className={`text-sm ${
-                    errMsg?.status === "failed"
-                      ? "text-[#f64949fe]"
-                      : "text-[#2ba150fe]"
-                  } mt-0.5`}
+                    errMsg?.status === "failed" ? "text-[#f64949fe]" : "text-[#2ba150fe]"} mt-0.5`}
                 >
                   {errMsg?.message}
                 </span>
@@ -113,9 +118,7 @@ const Home = () => {
                   htmlFor='vgifUpload'
                 >
                   <input
-                    type='file'
-                    data-max-size='5120'
-                    onChange={(e) => setFile(e.target.files[0])}
+                    type='file' data-max-size='5120' onChange={(e) => setFile(e.target.files[0])}
                     className='hidden'
                     id='vgifUpload'
                     accept='.gif'
@@ -156,12 +159,6 @@ const Home = () => {
               </div>
             )}
 
-
-
-
-
-
-
           </div>
             
       {/* right side ka content */}
@@ -198,10 +195,7 @@ const Home = () => {
                     </Link>
 
                     <div className='flex gap-1'>
-                      <CustomButton
-                        title='Accept'
-                        containerStyles='bg-[#0444a4] text-xs text-white px-1.5 py-1 rounded-full'
-                      />
+                      <CustomButton title='Accept' containerStyles='bg-[#0444a4] text-xs text-white px-1.5 py-1 rounded-full'  />
                       <CustomButton
                         title='Deny'
                         containerStyles='border border-[#666] text-xs text-ascent-1 px-1.5 py-1 rounded-full'
@@ -224,8 +218,7 @@ const Home = () => {
               </div>
               <div className='w-full flex flex-col gap-4 pt-4'>
                 {suggestedFriends?.map((friend) => (
-                  <div
-                    className='flex items-center justify-between'
+                  <div className='flex items-center justify-between'
                     key={friend._id}
                   >
                     <Link
