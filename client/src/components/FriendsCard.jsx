@@ -14,15 +14,10 @@ const FriendsCard = ({friends}) => {
        {/* frinds ko dikhane ke liye */}
        <div className='w-full flex flex-col gap-4 pt-4'>
           {friends?.map((friend) => (
-            <Link
-              to={"/profile/" + friend?._id}
-              key={friend?._id}
-              className='w-full flex gap-4 items-center cursor-pointer'
+            <Link to={"/profile/" + friend?._id}key={friend?._id} className='w-full flex gap-4 items-center cursor-pointer'
             >
                 {/* image dikahne ke liye */}
-              <img
-                src={friend?.profileUrl ?? NoProfile}
-                alt={friend?.firstName}
+              <img src={friend?.profileUrl ?? NoProfile}alt={friend?.firstName}
                 className='w-10 h-10 object-cover rounded-full'
               />
               {/* friends name ke liye */}
