@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useState ,useForm} from 'react';
+import { useState } from 'react';
 import { NoProfile } from '../assets';
 import moment from 'moment';
 import { BiSolidLike ,BiLike , BiComment } from 'react-icons/bi';
@@ -8,7 +8,8 @@ import {MdOutlineDeleteOutline} from 'react-icons/md'
 import Loading from './Loading';
 import CustomButton from "./CustomButton";
 import TextInput from "./TextInput";
-
+import { postComments } from "../assets/data";
+import { useForm } from "react-hook-form";
 
      {/* yeh comment ke liye form*/}
 const CommentForm = ({user ,id , replyAt ,getComments}) =>
@@ -71,7 +72,7 @@ const CommentForm = ({user ,id , replyAt ,getComments}) =>
         </div>
       </form>
     )
-}
+};
 
 
 
@@ -87,7 +88,10 @@ const PostCard = ({post ,user ,deletePost ,likePost}) => {
 
 
 const getComments =async () => {
+    setReplyComments(0);
 
+    setComments(postComments);
+    setLoading(false);
 };
 
   return (
@@ -202,6 +206,7 @@ const getComments =async () => {
             id={post?._id}
             getComments={() => getComments(post?._id)}
           />
+
 
 
 
