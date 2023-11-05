@@ -1,12 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState ,useForm} from 'react';
 import { NoProfile } from '../assets';
 import moment from 'moment';
 import { BiSolidLike ,BiLike , BiComment } from 'react-icons/bi';
 import {MdOutlineDeleteOutline} from 'react-icons/md'
+import Loading from './Loading';
+import CustomButton from "./CustomButton";
+import TextInput from "./TextInput";
 
-const CommentForm = ({user ,id , replyAt ,getComments})=>
+
+     {/* yeh comment ke liye form*/}
+const CommentForm = ({user ,id , replyAt ,getComments}) =>
 {
     const[loading ,setLoading] = useState(false);
     const [errMsg, setErrMsg] = useState("");
@@ -23,6 +28,7 @@ const CommentForm = ({user ,id , replyAt ,getComments})=>
     return (
         <form
         onSubmit={handleSubmit(onSubmit)}
+
         className='w-full border-b border-[#66666645]'
       >
         <div className='w-full flex items-center gap-2 py-4'>
@@ -46,10 +52,7 @@ const CommentForm = ({user ,id , replyAt ,getComments})=>
           <span
             role='alert'
             className={`text-sm ${
-              errMsg?.status === "failed"
-                ? "text-[#f64949fe]"
-                : "text-[#2ba150fe]"
-            } mt-0.5`}
+              errMsg?.status === "failed"? "text-[#f64949fe]" : "text-[#2ba150fe]" } mt-0.5`}
           >
             {errMsg?.message}
           </span>
@@ -67,8 +70,6 @@ const CommentForm = ({user ,id , replyAt ,getComments})=>
           )}
         </div>
       </form>
-
-
     )
 }
 
@@ -90,7 +91,7 @@ const getComments =async () => {
 };
 
   return (
-    
+
     <div className='mb-2 bg-primary p-4 rounded-xl '>
       
     <div className='flex gap-3 items-center mb-2'>
@@ -202,61 +203,11 @@ const getComments =async () => {
             getComments={() => getComments(post?._id)}
           />
 
-          {loading ? (
-            <Loading />
-          ) : comments?.length > 0 ? (
-            comments?.map((comment) => (
-              <div className='w-full py-2' key={comment?._id}>
-                <div className='flex gap-3 items-center mb-1'>
-                  <Link to={"/profile/" + comment?.userId?._id}>
-                    <img
-                      src={comment?.userId?.profileUrl ?? NoProfile}
-                      alt={comment?.userId?.firstName}
-                      className='w-10 h-10 rounded-full object-cover'
-                    />
-                  </Link>
-                  <div>
-                    <Link to={"/profile/" + comment?.userId?._id}>
-                      <p className='font-medium text-base text-ascent-1'>
-                        {comment?.userId?.firstName} {comment?.userId?.lastName}
-                      </p>
-                    </Link>
-                    <span className='text-ascent-2 text-sm'>
-                      {moment(comment?.createdAt ?? "2023-05-25").fromNow()}
-                    </span>
-                  </div>
-                </div>
 
-                <div className='ml-12'>
-                  <p className='text-ascent-2'>{comment?.comment}</p>
 
-                  <div className='mt-2 flex gap-6'>
-                    <p className='flex gap-2 items-center text-base text-ascent-2 cursor-pointer'>
-                      {comment?.likes?.includes(user?._id) ? (
-                        <BiSolidLike size={20} color='blue' />
-                      ) : (
-                        <BiLike size={20} />
-                      )}
-                      {comment?.likes?.length} Likes
-                    </p>
-                    <span
-                      className='text-blue cursor-pointer'
-                      onClick={() => setReplyComments(comment?._id)}
-                    >
-                      Reply
-                    </span>
-                  </div>
+                    </div>
+      )}
 
-                  {replyComments === comment?._id && (
-                    <CommentForm
-                      user={user}
-                      id={comment?._id}
-                      replyAt={comment?.from}
-                      getComments={() => getComments(post?._id)}
-                    />
-                  )}
-
-             </div>
 </div>
   )
 }
