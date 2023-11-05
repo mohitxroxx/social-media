@@ -20,9 +20,7 @@ const EditProfile = () => {
      const onSubmit = async (data) => {};
     
       const handleClose = () => { dispatch(UpdateProfile(false)); };
-      const handleSelect = (e) => {
-        setPicture(e.target.files[0]);
-      };
+      const handleSelect = (e) => { setPicture(e.target.files[0]);};
     
   return (
     <>
@@ -41,7 +39,7 @@ const EditProfile = () => {
             aria-modal='true'
             aria-labelledby='modal-headline'
           >
-<div className='flex justify-between px-6 pt-5 pb-2'>
+           <div className='flex justify-between px-6 pt-5 pb-2'>
               <label htmlFor='name'className='block font-medium text-xl text-ascent-1 text-left' >
                 Edit Profile
               </label>
@@ -50,7 +48,63 @@ const EditProfile = () => {
                 <MdClose size={22} />
               </button>
             </div>
+                 <form className='px-4 sm"px-6 flex felx-col gap-3 2xl:gap-6' 
+                 onSubmit={handleSubmit(onSubmit)}>
+                 <TextInput name='firstName' label='First Name'placeholder='First Name'type='text' styles='w-full'register={register("firstName", {
+                  required: "First Name is required!",
+                })}
+                error={errors.firstName ? errors.firstName?.message : ""}
+              />
 
+              <TextInput
+                label='Last Name' placeholder='Last Name'type='lastName' styles='w-full' register={register("lastName", {
+                  required: "Last Name do no match",
+                })}
+                error={errors.lastName ? errors.lastName?.message : ""}
+              />
+
+              <TextInput
+                name='profession' label='Profession'placeholder='Profession'type='text'styles='w-full'
+                register={register("profession", { required: "Profession is required!",
+                })}
+                error={errors.profession ? errors.profession?.message : ""}
+              />
+
+              <TextInput
+                label='Location'placeholder='Location' type='text' styles='w-full'register={register("location", {
+                  required: "Location do no match",
+                })}
+                error={errors.location ? errors.location?.message : ""}
+              />
+
+              <label
+                className='flex items-center gap-1 text-base text-ascent-2 hover:text-ascent-1 cursor-pointer my-4'
+                htmlFor='imgUpload'
+              >
+                <input
+                  type='file' className='' id='imgUpload'onChange={(e) => handleSelect(e)} accept='.jpg, .png, .jpeg' />
+              </label>
+
+              {errMsg?.message && (
+                <span
+                  role='alert'
+                  className={`text-sm ${
+                    errMsg?.status === "failed" ? "text-[#f64949fe]"  : "text-[#2ba150fe]"} mt-0.5`}
+                >
+                  {errMsg?.message}
+                </span>
+              )}
+
+              <div className='py-5 sm:flex sm:flex-row-reverse border-t border-[#66666645]'> {isSubmitting ? (
+                  <Loading />
+                ) : (
+                  <CustomButton type='submit' containerStyles={`inline-flex justify-center rounded-md bg-blue px-8 py-3 text-sm font-medium text-white outline-none`}
+                    title='Submit'
+                  />
+                )}
+              </div>
+
+                 </form>
 
            </div>
         </div>
