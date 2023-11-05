@@ -25,6 +25,7 @@ const FriendsCard = ({friends}) => {
                 alt={friend?.firstName}
                 className='w-10 h-10 object-cover rounded-full'
               />
+              {/* friends name ke liye */}
               <div className='flex-1'>
               <p className='text-base font-medium text-ascent-1'>
                   {friend?.firstName} {friend?.lastName}
