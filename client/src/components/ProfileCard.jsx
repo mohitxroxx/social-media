@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { NoProfile } from '../assets';
 import { UpdateProfile } from '../redux/userSlice';
 import {LiaEditSolid} from 'react-icons/lia'
-import {BsPersonFillAdd} from 'react-icons/bs'
-
+import {BsBriefcase, BsPersonFillAdd} from 'react-icons/bs'
+import {CiLocationOn} from 'react-icons/ci'
 
 const ProfileCard = ({user}) => {
  const{user: data, edit } = useSelector((state) => state.user);
@@ -55,6 +55,26 @@ const ProfileCard = ({user}) => {
  </div>
 
 </div>
+   {/* location ke liye and profession ke liye  */}
+   <div className='w-full flex flex-col gap-2 py-4 border-b border-[#66666645]'>
+      <div className='flex gap-2 items-center text-ascent-2'>
+           <CiLocationOn className='text-xl text-ascent-1' />
+           <span>{user?.location ?? "Add Location"}</span>
+      </div>
+    
+    <div className='flex gap-2 items-center text-ascent-2 '>
+          <BsBriefcase className='text-lg text-ascent-1' />
+          <span>{user?.profession ?? "Add Professon"} </span>
+    </div>
+    </div>
+{/* friend ke liye */}
+        <div className='w-full flex flex-col gap-2 py-4 border-b border-[#66666645]'>
+
+        
+
+        </div>
+
+
       </div>
     </div>
   )
