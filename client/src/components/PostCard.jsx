@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { NoProfile } from '../assets';
 import moment from 'moment';
-import { BiSolidLike ,BiLike } from 'react-icons/bi';
-
+import { BiSolidLike ,BiLike , BiComment } from 'react-icons/bi';
+import {MdOutlineDeleteOutline} from 'react-icons/md'
 
 const PostCard = ({post ,user ,deletePost ,likePost}) => {
 
@@ -14,7 +14,7 @@ const PostCard = ({post ,user ,deletePost ,likePost}) => {
  const[loading ,setLoading] = useState(false);
  const[replyComments ,setReplyComments] = useState(0);
  const[showComments ,setShowComments] = useState(0);
-   
+  const [getComments ,setGetComments] =useState(null)
 
 
   return (
@@ -66,8 +66,58 @@ const PostCard = ({post ,user ,deletePost ,likePost}) => {
                       >Show More</span>
               ))}   </p>  
 
-              
+              {
+                post?.image && 
+                (
+             <img src={post?.image}
+             alt='post' image
+               className='w-full mt-2 rounded-lg  '            />
+
+                ) }
       </div>
+                
+             <div className='mt-4 justify-between items-center px-3 py-2 text-ascent-2
+                text-base border-t border-[#66666645] '>
+
+                    {/* likes check krne ke liye */}
+ <p className='flex gap-2 items-center text-base cursor-pointer'>
+          {post?.likes?.includes(user?._id) ? (
+            <BiSolidLike size={20} color='blue' />
+          ) : (
+            <BiLike size={20} />
+          )}
+          {post?.likes?.length} Likes
+        </p>
+         
+
+         {/* comments ke liye */}
+         <p
+          className='flex gap-2 items-center text-base cursor-pointer'> 
+        {/* //   onClick={() => { 
+        //     setShowComments(showComments === post._id ? null : post._id);
+        //     getComments(post?._id);
+        //   }}
+        // > */}
+          <BiComment size={20} />
+          {post?.comments?.length} Comments
+        </p>
+        {/* delete karne ki functionality agr user ki hai id to */}
+            {
+                user?._id === post?.userId?._id &&
+               (
+                <div className='flex gap-1 items-center text-base text-ascent-1 cursor-pointer '
+                
+                onClick={()=> deletePost(post?._id)} 
+                >  
+                    
+                    <MdOutlineDeleteOutline size={20} />
+            <span>Delete</span>
+                    
+                        </div>
+               )
+            }
+          
+             </div>
 
 </div>
   )

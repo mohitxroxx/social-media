@@ -156,7 +156,7 @@ const Home = () => {
            {/* friend request */}
               <div className='w-full bg-primary shadow-sm rounded-lg px-6 py-5'>
         <div className='flex itesm-center justif-between text-xl text-ascent-1 pb-2 border-b border-[#66666645]'>
-           <span>Friend Request</span>
+           <span>Friend Request-</span>
            <span>{friendRequest?.length}</span>
 
         </div>
