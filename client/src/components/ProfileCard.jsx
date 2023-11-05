@@ -7,6 +7,9 @@ import { UpdateProfile } from '../redux/userSlice';
 import {LiaEditSolid} from 'react-icons/lia'
 import {BsBriefcase, BsPersonFillAdd} from 'react-icons/bs'
 import {CiLocationOn} from 'react-icons/ci'
+import moment from 'moment'
+import { BsFacebook ,BsInstagram } from 'react-icons/bs';
+import {FaTwitterSquare} from 'react-icons/fa'
 
 const ProfileCard = ({user}) => {
  const{user: data, edit } = useSelector((state) => state.user);
@@ -70,14 +73,50 @@ const ProfileCard = ({user}) => {
 {/* friend ke liye */}
         <div className='w-full flex flex-col gap-2 py-4 border-b border-[#66666645]'>
 
-        
+        <p className='text-xl text-ascent-1 font-semibold'>
+            {user?.friends?.length} Friends
+        </p>
 
+        <div className='flex items-center justify-between'>
+               <span className='text-ascent-2'>
+                Who viewed your profile </span>
+                <span className='text-ascent-1 text-lg'>{user?.views?.length}</span>
+              
+        </div>
+  {/* account verified hai y nhi */}
+            <span className='text-base text-blue'>{user?.verified ? "Verified Account" : "Not Verifeid"  }</span> 
+
+             <div className='flex items-center justify-between'>
+            <span className=' text-ascent-2 '>Joined</span>
+            <span className='text-ascent-1 text-base  text-red' >{moment(user?.createdAt).fromNow()}</span>
+                  
+             </div>
         </div>
 
+        {/* sociasl media accounts ko jod rahe hai */}
+            <div className='w-full  flec flec-col gap-4 py-4 pb-6'>
+       <p className='text-ascent-1 text-lg font-semibold'>Social Profile</p>
+           
+       <div className='flex gap-2 items-center text-ascent-2'>
+            <BsInstagram className=' text-xl text-ascent-1' />
+            <span>Instagram</span>
+          </div>
+          <div className='flex gap-2 items-center text-ascent-2'>
+            <FaTwitterSquare className=' text-xl text-ascent-1' />
+            <span>Twitter</span>
+          </div>
+          <div className='flex gap-2 items-center text-ascent-2'>
+            <BsFacebook className=' text-xl text-ascent-1' />
+            <span>Facebook</span>
+
+           
+            </div>
+
+      </div>
 
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ProfileCard
