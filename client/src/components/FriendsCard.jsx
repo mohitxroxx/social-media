@@ -25,7 +25,9 @@ const FriendsCard = ({friends}) => {
                 className='w-10 h-10 object-cover rounded-full'
               />
               <div className='flex-1'>
-               
+              <p className='text-base font-medium text-ascent-1'>
+                  {friend?.firstName} {friend?.lastName}
+                </p>
                 <span className='text-sm text-ascent-2'>
                   {friend?.profession ?? "No Profession"}
                 </span>
