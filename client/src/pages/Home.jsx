@@ -17,11 +17,16 @@ const Home = () => {
       {/* left side ke liye */}
       <div className='hidden w-1/3 lg:w-1/4 h-full md:flex flex-col gap-6 
       overflow-y-auto '>
-  <ProfileCard user={user} />
+     <ProfileCard user={user} />
 
-<FriendsCard friends={user?.friends} />
+       <FriendsCard friends={user?.friends} />
      
       </div>
+       {/* center ke liye */}
+          <div className='flex-1 h-full bg-primary px-4 flex flex-col gap-6 overflow-y-auto'>
+
+          </div>
+            
 
       </div>
       
