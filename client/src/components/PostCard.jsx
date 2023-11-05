@@ -1,4 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { NoProfile } from '../assets';
+
+
+
 
 const PostCard = ({post ,user ,deletePost ,likePost}) => {
 
@@ -11,8 +17,31 @@ const PostCard = ({post ,user ,deletePost ,likePost}) => {
    
 
   return (
-    <div >
+    <div className='mb-2 bg-primary p-4 rounded-xl '>
       
+    <div className='flex gap-3 items-center mb-2'>
+
+<Link to={"/profile/" + post?.userId?._id}>  
+<img src={post?.userId?.profileUrl ?? NoProfile}
+            alt={post?.userId?.firstName}
+            className='w-10 h-10 rounded-full object-cover'
+          />
+  </Link>
+ 
+<div className='w-full flex justify-between'>
+
+<div className=''>
+       <Link></Link>
+    
+</div>
+
+
+</div>
+
+
+
+        </div>
+
     </div>
   )
 }
