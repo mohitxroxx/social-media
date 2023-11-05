@@ -14,8 +14,12 @@ const PostCard = ({post ,user ,deletePost ,likePost}) => {
  const[loading ,setLoading] = useState(false);
  const[replyComments ,setReplyComments] = useState(0);
  const[showComments ,setShowComments] = useState(0);
-  const [getComments ,setGetComments] =useState(null)
 
+
+
+const getComments =async () => {
+
+};
 
   return (
     <div className='mb-2 bg-primary p-4 rounded-xl '>
@@ -92,12 +96,13 @@ const PostCard = ({post ,user ,deletePost ,likePost}) => {
 
          {/* comments ke liye */}
          <p
-          className='flex gap-2 items-center text-base cursor-pointer'> 
-        {/* //   onClick={() => { 
-        //     setShowComments(showComments === post._id ? null : post._id);
-        //     getComments(post?._id);
-        //   }}
-        // > */}
+          className='flex gap-2 items-center text-base cursor-pointer'
+          onClick={() => { 
+            setShowComments(showComments === post._id ? null : post._id);
+            getComments(post?._id);
+          }}
+        >
+
           <BiComment size={20} />
           {post?.comments?.length} Comments
         </p>
