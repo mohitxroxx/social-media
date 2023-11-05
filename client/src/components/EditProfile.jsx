@@ -6,9 +6,9 @@ import TextInput from "./TextInput";
 import Loading from "./Loading";
 import CustomButton from "./CustomButton";
 import { UpdateProfile } from "../redux/userSlice";
-import { MdClose } from 'react-icons/md';
+import { useState } from 'react';
 
-const EditProfile = () => {
+const EditProfile =() => {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const [errMsg, setErrMsg] = useState("");
@@ -19,8 +19,10 @@ const EditProfile = () => {
     const {register, handleSubmit, formState: { errors }, } = useForm({ mode: "onChange",defaultValues: { ...user }, });
      const onSubmit = async (data) => {};
     
-      const handleClose = () => { dispatch(UpdateProfile(false)); };
-      const handleSelect = (e) => { setPicture(e.target.files[0]);};
+      const handleClose = () => {
+         dispatch(UpdateProfile(false)); };
+      const handleSelect = (event) => { 
+        setPicture(event.target.files[0]);};
     
   return (
     <>
@@ -48,7 +50,7 @@ const EditProfile = () => {
                 <MdClose size={22} />
               </button>
             </div>
-                 <form className='px-4 sm"px-6 flex felx-col gap-3 2xl:gap-6' 
+                 <form className='px-4 sm"px-6 flex flex-col gap-3 2xl:gap-6' 
                  onSubmit={handleSubmit(onSubmit)}>
                  <TextInput name='firstName' label='First Name'placeholder='First Name'type='text' styles='w-full'register={register("firstName", {
                   required: "First Name is required!",
@@ -90,12 +92,9 @@ const EditProfile = () => {
                   role='alert'
                   className={`text-sm ${
                     errMsg?.status === "failed" ? "text-[#f64949fe]"  : "text-[#2ba150fe]"} mt-0.5`}
-                >
-                  {errMsg?.message}
-                </span>
+                >{errMsg?.message}</span>
               )}
-
-              <div className='py-5 sm:flex sm:flex-row-reverse border-t border-[#66666645]'> {isSubmitting ? (
+       <div className='py-5 sm:flex sm:flex-row-reverse border-t border-[#66666645]'> {isSubmitting ? (
                   <Loading />
                 ) : (
                   <CustomButton type='submit' containerStyles={`inline-flex justify-center rounded-md bg-blue px-8 py-3 text-sm font-medium text-white outline-none`}

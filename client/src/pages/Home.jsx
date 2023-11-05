@@ -16,7 +16,7 @@ import PostCard from '../components/PostCard'
 
 
 const Home = () => {
-  const {user} =useSelector(state=>state.user)
+  const {user ,edit} =useSelector(state=>state.user)
   const [friendRequest ,setFriendRequest] =useState(requests);
   const [suggestedFriends , setSuggestedFriends] = useState(suggest);
    const [errMsg, setErrMsg] = useState("");
@@ -252,7 +252,7 @@ const Home = () => {
       
       </div>
 
-      <EditProfile />
+    { edit && <EditProfile />}
       </>
   )
 }
