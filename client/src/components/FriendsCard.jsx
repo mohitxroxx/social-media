@@ -19,6 +19,7 @@ const FriendsCard = ({friends}) => {
               key={friend?._id}
               className='w-full flex gap-4 items-center cursor-pointer'
             >
+                {/* image dikahne ke liye */}
               <img
                 src={friend?.profileUrl ?? NoProfile}
                 alt={friend?.firstName}
