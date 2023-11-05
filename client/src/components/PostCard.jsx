@@ -223,12 +223,67 @@ const getComments =async () => {
                   </Link>
                     {/*   name ke liye   */}
                  <div>
-                    
+                 <Link to={"/profile/" + comment?.userId?._id}>
+                      <p className='font-medium text-base text-ascent-1'>
+                        {comment?.userId?.firstName} {comment?.userId?.lastName}
+                      </p>
+                    </Link>
+                    <span className='text-ascent-2 text-sm'>
+                      {moment(comment?.createdAt ?? "2023-05-25").fromNow()}
+                    </span>
                     
                      </div>
+                    </div>
 
+               <div className='ml-12 '> 
+               <p className='text-ascent-2'>{comment?.comment}</p>
 
-                         </div>
+                     <div className='mt-2 flex gap-6 '>
+                     <p className='flex gap-2 items-center text-base text-ascent-2 cursor-pointer'>
+                      {comment?.likes?.includes(user?._id) ? (
+                        <BiSolidLike size={20} color='blue' />
+                      ) : (
+                        <BiLike size={20} />
+                      )}
+                      {comment?.likes?.length} Likes
+                    </p>
+                    <span
+                      className='text-blue cursor-pointer'
+                      onClick={() => setReplyComments(comment?._id)}
+                    >
+                      Reply
+                    </span>
+                        </div>
+
+            
+                        {replyComments === comment?._id && (
+                    <CommentForm
+                      user={user}
+                      id={comment?._id}
+                      replyAt={comment?.from}
+                      getComments={() => getComments(post?._id)}
+                    />
+                  )}
+
+                   </div>
+
+                        {/* reply krne ke liye */}
+
+             <div className='flex text-sm py-4 text-ascent-2 text-center'>
+             {comment?.replies?.length > 0 && (
+                    <p
+                      className='text-base text-ascent-1 cursor-pointer'
+                      onClick={() =>
+                        setShowReply(
+                          showReply === comment?.replies?._id
+                            ? 0
+                            : comment?.replies?._id
+                        )  }
+                    >  Show Replies ({comment?.replies?.length})
+                    </p>
+                  )}
+                
+                 </div>
 
                      </div>
 
@@ -239,7 +294,7 @@ const getComments =async () => {
 
           )}
            
-                    </div>
+       </div>
       )}
 
 </div>
