@@ -206,13 +206,30 @@ const getComments =async () => {
             id={post?._id}
             getComments={() => getComments(post?._id)}
           />
-
+              {/* kitne logo ne comments kiya aur kya kiya */}
            {loading ? (
             <Loading />
           ) : comments?.length > 0 ? (
             comments?.map((comment) => (
                 <div className='w-full py-2' key={comment?._id}>
+                    <div className='flex gap-3 items-center mb-1 '>
+                        
+                    <Link to={"/profile/" + comment?.userId?._id}>
+                    <img
+                      src={comment?.userId?.profileUrl ?? NoProfile}
+                      alt={comment?.userId?.firstName}
+                      className='w-10 h-10 rounded-full object-cover'
+                    />
+                  </Link>
+                    {/*   name ke liye   */}
+                 <div>
                     
+                    
+                     </div>
+
+
+                         </div>
+
                      </div>
 
             ))
