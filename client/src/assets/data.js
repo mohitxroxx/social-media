@@ -2,9 +2,9 @@
 
  export const user ={
     _id: "64df3c064180b81adfe41d4b",
-    firstName: "Sachendra",
-    lastName: "Gangwar",
-    email: "sachendra@gmail.com",
+    firstName: "GDSC",
+    lastName: "AKGEC",
+    email: "connect2dsc.akgec@gmail.com",
 
     friends: [
         {
@@ -18,8 +18,7 @@
       createdAt: "2023-08-18T09:33:32.519Z",
       updatedAt: "2023-08-18T09:49:19.475Z",
       __v: 2,
-      profileUrl:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
+      
     },  
     {
         _id: "64df39704180b81adfe41d0b",
@@ -90,7 +89,7 @@
     createdAt: "2023-08-18T09:38:14.179Z",
     updatedAt: "2023-08-21T06:46:18.258Z",
     profileUrl:
-      "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
+      "https://d1fdloi71mui9q.cloudfront.net/ROLfF9hgSc6nNawYpI04_bt8QxF0oNv43F2bR",
     token: "hZWFmZmU3NmMiLCJpYXQiOjE2OTIwMzY5",
   };
 
@@ -101,8 +100,7 @@
       firstName: "John",
       lastName: "Bruce",
       email: "john@gmail.com",
-      profileUrl:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
+      
     },
     {
       _id: "64df39704180b81adfe41d0b",
@@ -154,15 +152,14 @@ export const posts = [
       _id: "64e2fe620d7868ecff1a6a86",
       userId: {
         _id: "64df39704180b81adfe41d0b",
-        firstName: "Sachendra",
-        lastName: "Gangwar",
-        profileUrl:
-          "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
-        location: "Noida, India",
+        firstName: "Krishna",
+        lastName: "Bansal",
+       
+        location: "Ghaziabad, India",
       },
-      description: "Hello everyone, this is a new video. check it out. thank you",
+      description: "Hello everyone, this is a new post. check it out. thank you",
       image:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692597858/SOCIALMEDIA/hdahstpztt1fvobc13st.png",
+        "https://dscakgec.org/static/media/jetpack.cbde5155036caf57b967.png",
       likes: ["64df3c064180b81adfe41d4b"],
       comments: [],
       createdAt: "2023-08-21T06:04:18.297Z",
@@ -175,9 +172,8 @@ export const posts = [
         _id: "64df39704180b81adfe41d0b",
         firstName: "Sachendra",
         lastName: "Gangwar",
-        profileUrl:
-          "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
-        location: "Mumbai, India",
+       
+        location: "Ghaziabad, India",
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -191,8 +187,8 @@ export const posts = [
       _id: "64df437e4a4c0d47b536a002",
       userId: {
         _id: "64df424b4a4c0d47b5369f65",
-        firstName: "User",
-        lastName: "One",
+        firstName: "Mohit",
+        lastName: "Singh",
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -202,16 +198,15 @@ export const posts = [
       updatedAt: "2023-08-21T02:54:01.806Z",
       __v: 0,
       image:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874458/samples/imagecon-group.jpg",
+        "https://th.bing.com/th/id/OIP.vds9YZdeolzbM3dLN_ehbAHaHa?pid=ImgDet&w=474&h=474&rs=1",
     },
     {
       _id: "64df43714a4c0d47b5369fef",
       userId: {
         _id: "64df3c064180b81adfe41d4b",
-        firstName: "Code",
-        lastName: "Wave",
-        profileUrl:
-          "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
+        firstName: "Tarun",
+        lastName: "Lalwani",
+       
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -225,8 +220,8 @@ export const posts = [
       _id: "64df42dc4a4c0d47b5369f8a",
       userId: {
         _id: "64df424b4a4c0d47b5369f65",
-        firstName: "User",
-        lastName: "One",
+        firstName: "Vikshita",
+        lastName: "Jain",
       },
       description:
         " What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,",
@@ -236,14 +231,14 @@ export const posts = [
       updatedAt: "2023-08-18T10:11:00.348Z",
       __v: 0,
       image:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874457/samples/ecommerce/leather-bag-gray.jpg",
+        "https://dscakgec.org/static/media/weekoflearning.b68b9a904d48c02045ce.jpg",
     },
     {
       _id: "64df42b04a4c0d47b5369f77",
       userId: {
         _id: "64df424b4a4c0d47b5369f65",
-        firstName: "User",
-        lastName: "One",
+        firstName: "Kapish",
+        lastName: "Upadhayay",
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -257,10 +252,9 @@ export const posts = [
       _id: "64df41114a4c0d47b5369f02",
       userId: {
         _id: "64df3aec4180b81adfe41d32",
-        firstName: "Jomes",
-        lastName: "Gardener",
-        profileUrl:
-          "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
+        firstName: "GDSC",
+        lastName: "AKGEC",
+       
       },
       description:
         " What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
@@ -274,10 +268,8 @@ export const posts = [
       _id: "64df3ef86c2bd953c7b43193",
       userId: {
         _id: "64df3c064180b81adfe41d4b",
-        firstName: "Code",
-        lastName: "Wave",
-        profileUrl:
-          "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
+        firstName: "Shorya",
+        
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -295,17 +287,16 @@ export const posts = [
       updatedAt: "2023-08-21T03:36:36.745Z",
       __v: 0,
       image:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874455/samples/animals/three-dogs.jpg",
+        "https://th.bing.com/th/id/OIP.UPIX2lt9qvtD8MU7I74d-gHaHa?pid=ImgDet&w=474&h=474&rs=1",
     },
     {
       _id: "64df3ed06c2bd953c7b43172",
       userId: {
         _id: "64df39704180b81adfe41d0b",
-        firstName: "Sachin ",
-        lastName: "Gangwar",
-        profileUrl:
-          "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874453/samples/bike.jpg",
-        location: "Mumbai, India",
+        firstName: "GDSC",
+        lastName: "AKGEC",
+       
+        location: "Ghaziabad, India",
       },
       description:
         " What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
