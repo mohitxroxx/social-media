@@ -1,57 +1,68 @@
 const users=require('../models/user')
-const hash=require('../util/auth')
+const express=require('express')
+const router=express.Router()
 const passport=require('passport')
+const users=require('../models/users')
+const bcrypt=require('bcryptjs')
+const {redirect}=require('../routes/validation')
 
-module.exports = {
-    register: async function (req, res, next) {
-        const { firstName, lastName, email, password } = req.body
-        console.log(req.body)
-        if (!(firstName ||lastName || email || password)){
-            next('Make sure that all entries are filled and password is more than 7 characters')
-            return
-        }
-        else{
-            res.json({
-                message: 'You are now registered and can log in',
-                name: req.body.firstName
-              })
-        }
-        try {
-            const check = await users.findOne({ email })
-            if (check){
-                next("This email is already registered" )
-                return
+router.get('/login', redirect, (req, res) => res.render('Login'))
+router.get('/register', redirect, (req, res) => res.render('Register'))
+
+router.post('/register',(req,res)=>{
+    const {firstName,lastName,email,password}=req.body
+    if(password.length<8 || !firstName|| !lastName||!email||!password){
+        res.json({ message: 'Make sure that all entries are filled and password is more than 7 characters' });
+        // console.log('Make sure that all entries are filled and password is more than 7 characters')
+    }
+    else{
+        users.findOne({email:email}).then(user=>{
+            if(user){
+                res.json({ message: 'Email already exists' });
+                // console.log('Email already exists')
             }
-
-            const hashedpass = await hash(password)
-            const user = await users.create({
-                firstName,
-                lastName,
-                email, 
-                password: hashedpass
-            })
-            // verification(user, res) 
-        } 
-        catch (error) {
-            console.log(error)
-            res.status(404).json({ message: error.message })
-        }
-    },
-
-    login: async function (req, res, next) {
-        passport.authenticate('local', (err, user, info) => {
-          if (err) {
-            return next(err);
-          }
-          if (!user) {
-            return res.status(401).json({ message: info.message });
-          }
-          req.logIn(user, err => {
-            if (err) {
-              return next(err);
+            else{
+                const newUser=new users({
+                    firstName,
+                    lastName,
+                    email,
+                    password
+                })
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(newUser.password, salt, (err, hash) => {
+                      if (err) throw err;
+                      newUser.password = hash;
+                      newUser.save().then(user => {
+                        return res.status(200).json({ message: 'Registered successfully',
+                            name: newUser.firstName
+                          })
+                        })
+                        .catch(err=>console.log(err))
+                    })
+                })
             }
-            return res.status(200).json({ message: 'Logged in successfully' });
-          });
-        })(req, res, next);
+        })
+    }
+})
+
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+      if (err) {
+        return next(err)
       }
-}
+      if (!user) {
+        return res.status(401).json({ message: info.message })
+      }
+      req.logIn(user, err => {
+        if (err) {
+          return next(err)
+        }
+        res.json({ message: 'Logged in successfully' })
+        return
+      })
+    })
+  })
+
+
+
+module.exports=router;
