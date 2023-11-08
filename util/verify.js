@@ -1,28 +1,27 @@
-const verification = require('../models/verification')
+// const verification = require('../models/verification')
 const nodemailer=require('nodemailer')
 const dotenv=require('dotenv')
-const uuidv4=require('uuid')
-const hash=require('../util/auth')
+const uuid=require('uuid')
 
 dotenv.config();
 
-const {SMTP_EMAIL,SMTP_PASS,APP_URL}=process.env
-
+const SMTP_EMAIL='gauss10056@gmail.com',SMTP_PASS='urtkdsppcxrkdzdc',APP_URL='http://localhost:5100/'
+// console.log(SMTP_PASS)
 let transporter=nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: SMTP_EMAIL,
-        pass: SMTP_PASS,
+        pass: SMTP_PASS, 
     },
 })
 
 module.exports = {
   sendmail: async function (user, res) {
-      const { _id, email, fname } = user;
-      const token = _id + uuidv4()
+      const { _id, email, firstName } = user;
+      const token = _id + uuid.v4()
       const link = APP_URL + "users/verify/" + _id + "/" + token;
       const mailOptions = {
-          from: AUTH_EMAIL,
+          from: SMTP_EMAIL,
           to: email,
           subject: "Email Verification",
           html: `<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f7f7f7;">
@@ -32,7 +31,7 @@ module.exports = {
                   <td>
                       <h3 style="color: #0838bc; font-size: 24px; text-align: center; margin-bottom: 10px;">Please verify your email address</h3>
                       <hr style="border: 1px solid #ccc; margin: 20px 0;">
-                      <h4 style="font-size: 20px; color: #333;">Hi ${fname},</h4>
+                      <h4 style="font-size: 20px; color: #333;">Hi ${firstName},</h4>
                       <p style="font-size: 16px; color: #333; margin: 20px 0;">Before you continue exploring, please verify your email address.</p>
                       <p style="font-size: 16px; color: #333;">This verification link expires in 1 hour.</p>
                       <a href="${link}"
@@ -46,16 +45,15 @@ module.exports = {
           </table>
       </body>`,
       }
-      try {
-          const hashedToken = await hash(token);
-          const newVerifiedEmail = await verification.create({
-              userId: _id,
-              token: hashedToken,
-              createdAt: Date.now(),
-              expiresAt: Date.now() + 3600000,
-          });
+    //   try {
+    //       const hashedToken = await hash(token);
+    //       const newVerifiedEmail = await verification.create({
+    //           userId: _id,
+    //           token: hashedToken,
+    //           createdAt: Date.now(),
+    //           expiresAt: Date.now() + 3600000,
+    //       });
 
-          if (newVerifiedEmail) {
               transporter
                   .sendMail(mailOptions)
                   .then(() => {
@@ -69,9 +67,4 @@ module.exports = {
                       res.status(404).json({ message:"Something went wrong" });
                   });
           }
-      } catch (error) {
-          console.log(error);
-          res.status(404).json({message:"Something went wrong" });
-      }
   }
-}
