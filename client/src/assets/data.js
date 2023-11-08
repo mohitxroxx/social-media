@@ -4,14 +4,16 @@
     _id: "64df3c064180b81adfe41d4b",
     firstName: "GDSC",
     lastName: "AKGEC",
+    profession: "GOOGLE DEVELOPMENT STUDENT CLUB",
     email: "connect2dsc.akgec@gmail.com",
 
     friends: [
         {
             _id: "64df3aec4180b81adfe41d32",
-      firstName: "John",
-      lastName: "Bruce",
-      email: "john@gmail.com",
+      firstName: "Tarun",
+      lastName: "Mishra",
+      email: "tarun@gmail.com",
+      profession: "Full-Stack Developer",
       friends: ["64df3c064180b81adfe41d4b", "64df39704180b81adfe41d0b"],
       views: [],
       verified: true,
@@ -22,9 +24,10 @@
     },  
     {
         _id: "64df39704180b81adfe41d0b",
-        firstName: "James",
-        lastName: "Jackson",
-        email: "james@gmail.com",
+        firstName: "Varun",
+        lastName: "Pratap",
+        email: "varun@gmail.com",
+        profession: "Full-Stack Developer",
         friends: ["64df3c064180b81adfe41d4b", "64df3aec4180b81adfe41d32"],
         views: [
           "64df39704180b81adfe41d0b",
@@ -44,9 +47,10 @@
 
     {
         _id: "64df424b4a4c0d47b5369f65",
-        firstName: "User",
-        lastName: "One",
-        email: "user!@gmail.com",
+        firstName: "Karan",
+        lastName: "Singh",
+        email: "karan@gmail.com",
+        profession: "Full-Stack Developer",
         friends: ["64df3c064180b81adfe41d4b"],
         views: [],
         verified: true,
@@ -97,24 +101,32 @@
   export const friends = [
     {
       _id: "64df3aec4180b81adfe41d32",
-      firstName: "John",
-      lastName: "Bruce",
-      email: "john@gmail.com",
+      firstName: "Tushar",
+      lastName: "Mishra",
+      profession: "Full-Stack Developer",
+      profileUrl:
+      "https://th.bing.com/th/id/OIP.dgjf_krLCMNB9lM5roq_LgHaHa?w=184&h=184&c=7&r=0&o=5&pid=1.7",
+      email: "tushar@gmail.com",
       
     },
     {
       _id: "64df39704180b81adfe41d0b",
-      firstName: "James",
-      lastName: "Jackson",
-      email: "james@gmail.com",
+      firstName: "Varun",
+      lastName: "Pratap",
+      profileUrl:
+      "https://yt3.googleusercontent.com/rydC3ZtVK4cFzQ2bkooLOWTzc70NBXdPpcFEARx6E_mzqy8nj0eZDDovwciUg-4r4pMv99YsBg=s900-c-k-c0x00ffffff-no-rj",
+      email: "varun@gmail.com",
       location: "Mumbai, India",
       profession: "Full-Stack Developer",
     },
     {
       _id: "64df424b4a4c0d47b5369f65",
-      firstName: "User",
-      lastName: "One",
-      email: "user!@gmail.com",
+      firstName: "Karan",
+      lastName: "Singh",
+      profession: "Full-Stack Developer",
+      profileUrl:
+      "https://sm.askmen.com/t/askmen_in/article/f/facebook-p/facebook-profile-picture-affects-chances-of-gettin_fr3n.1200.jpg",
+      email: "karan@gmail.com",
     },
   ];
   export const requests = [
@@ -154,12 +166,13 @@ export const posts = [
         _id: "64df39704180b81adfe41d0b",
         firstName: "Krishna",
         lastName: "Bansal",
-       
+        profileUrl:
+        "https://bestprofilepictures.com/wp-content/uploads/2021/08/Amazing-Profile-Picture-for-Facebook.jpg",
         location: "Ghaziabad, India",
       },
       description: "Hello everyone, this is a new post. check it out. thank you",
       image:
-        "https://dscakgec.org/static/media/jetpack.cbde5155036caf57b967.png",
+        "https://dscakgec.org/static/media/solutionchallenge.2d26f063afb7d335990b.webp",
       likes: ["64df3c064180b81adfe41d4b"],
       comments: [],
       createdAt: "2023-08-21T06:04:18.297Z",
@@ -172,7 +185,8 @@ export const posts = [
         _id: "64df39704180b81adfe41d0b",
         firstName: "Sachendra",
         lastName: "Gangwar",
-       
+        profileUrl:
+        "https://th.bing.com/th/id/OIP.1OxHm0-YJ86HSsNFBf3kOAHaHa?pid=ImgDet&rs=1",
         location: "Ghaziabad, India",
       },
       description:
@@ -189,6 +203,8 @@ export const posts = [
         _id: "64df424b4a4c0d47b5369f65",
         firstName: "Mohit",
         lastName: "Singh",
+        profileUrl:
+       " https://wallpapercave.com/wp/wp7810895.jpg",
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -206,6 +222,8 @@ export const posts = [
         _id: "64df3c064180b81adfe41d4b",
         firstName: "Tarun",
         lastName: "Lalwani",
+       profileUrl:
+       "https://dscakgec.org/static/media/tarun.7b8e5ec20858d4ee0bf3.jpg",
        
       },
       description:
@@ -222,6 +240,8 @@ export const posts = [
         _id: "64df424b4a4c0d47b5369f65",
         firstName: "Vikshita",
         lastName: "Jain",
+        profileUrl:
+        "https://dscakgec.org/static/media/vikshita.f59843ee23e2b84d2a5a.jpg",
       },
       description:
         " What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,",
@@ -239,6 +259,8 @@ export const posts = [
         _id: "64df424b4a4c0d47b5369f65",
         firstName: "Kapish",
         lastName: "Upadhayay",
+        profileUrl:
+        "https://dscakgec.org/static/media/kapish.6122e502213ca615c958.png",
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -254,6 +276,8 @@ export const posts = [
         _id: "64df3aec4180b81adfe41d32",
         firstName: "GDSC",
         lastName: "AKGEC",
+        profileUrl:
+      "https://d1fdloi71mui9q.cloudfront.net/ROLfF9hgSc6nNawYpI04_bt8QxF0oNv43F2bR",
        
       },
       description:
@@ -269,7 +293,8 @@ export const posts = [
       userId: {
         _id: "64df3c064180b81adfe41d4b",
         firstName: "Shorya",
-        
+        profileUrl:
+        "https://dscakgec.org/static/media/Arpan.562ccc6368e12bd386c5.png",
       },
       description:
         "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
@@ -295,7 +320,8 @@ export const posts = [
         _id: "64df39704180b81adfe41d0b",
         firstName: "GDSC",
         lastName: "AKGEC",
-       
+        profileUrl:
+      "https://d1fdloi71mui9q.cloudfront.net/ROLfF9hgSc6nNawYpI04_bt8QxF0oNv43F2bR",
         location: "Ghaziabad, India",
       },
       description:
