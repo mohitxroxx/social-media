@@ -5,8 +5,8 @@ const uuid=require('uuid')
 
 dotenv.config();
 
-const SMTP_EMAIL='gauss10056@gmail.com',SMTP_PASS='urtkdsppcxrkdzdc',APP_URL='http://localhost:5100/'
-// console.log(SMTP_PASS)
+const {SMTP_EMAIL,SMTP_PASS,APP_URL}=process.env
+// console.log(SMTP_EMAIL)
 let transporter=nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -38,7 +38,7 @@ module.exports = {
                           style="display: inline-block; padding: 14px 40px; font-size: 18px; text-align: center; text-decoration: none; color: #fff; background-color: #292e2b; border-radius: 8px; margin-top: 20px; margin-left: 4cm;">Verify Email Address</a>
                       <div style="font-size: 16px; color: #333; margin-top: 20px; text-align: center;">
                           <h5 style="font-size: 18px;">Best Regards</h5>
-                          <h5 style="font-size: 18px;">ShareFun Team</h5>
+                          <h5 style="font-size: 18px;">Social Mediaaaaaa</h5>
                       </div>
                   </td>
               </tr>
@@ -53,10 +53,8 @@ module.exports = {
     //           createdAt: Date.now(),
     //           expiresAt: Date.now() + 3600000,
     //       });
-
-              transporter
-                  .sendMail(mailOptions)
-                  .then(() => {
+                
+              transporter.sendMail(mailOptions).then(() => {
                       res.status(201).send({
                           success: "PENDING",
                           message: "Verification email has been sent to your account. Check your email for further instructions.",

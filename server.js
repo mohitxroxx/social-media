@@ -37,9 +37,9 @@ app.use(morgan("dev"));
 app.use(router);
 
 
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const GOOGLE_CLIENT_ID = '314213410397-8irgj1u87btqb33o5j0ctqe4rjaud3h8.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = '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';
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
@@ -60,5 +60,5 @@ app.get('/auth/google/callback',
     res.redirect('/success');
   });
 
-const PORT=process.env.PORT||5100
+const PORT=process.env.PORT||5100 
 app.listen(PORT,console.log("SERVER UP and running at",PORT))

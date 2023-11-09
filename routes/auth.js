@@ -26,7 +26,7 @@ router.post('/register',async(req,res)=>{
               password
           })
             if(user){
-                res.json({ message: 'Email already exists' });
+              return res.status(401).json({ message: 'email already exists' })
                 // console.log('Email already exists')
             }
             else{
@@ -46,6 +46,7 @@ router.post('/register',async(req,res)=>{
                 })
             }
         })
+    }
     const newUser=new users({
       firstName,
       lastName,
@@ -64,7 +65,7 @@ router.post('/register',async(req,res)=>{
         expiresAt: Date.now() + 3600000,
         });
     await newVerification.save();
-      }
+    
 })
 
 router.post('/login', (req, res, next) => {
@@ -73,13 +74,13 @@ router.post('/login', (req, res, next) => {
         return next(err);
       }
       if (!user) {
-        return res.status(401).json({ message: info.message });
+        return res.status(401).json({ message: info.message })
       }
       req.logIn(user, err => {
         if (err) {
           return next(err);
         }
-        return res.status(200).json({ message: 'Logged in successfully' });
+        return res.status(200).json({ message: 'Logged in successfully' })
       });
     })(req, res, next);
   });
@@ -101,7 +102,7 @@ router.get('/confirm/:userId/:token', async (req, res) => {
   await User.updateOne({ _id: userId }, { confirmed: true });
   await verification.deleteOne({ _id: verification._id });
   res.json({ message: "Account confirmed successfully" });
-});
+})
 
 
 module.exports=router;

@@ -20,6 +20,6 @@ const userSchema = new mongoose.Schema({
       minlength: [8, "Password cannot be less than 8 characters"],
     }
 })
-const users = mongoose.model("users", userSchema);
+const users = mongoose.model("users", userSchema)
 
 module.exports=users
