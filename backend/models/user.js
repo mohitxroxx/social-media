@@ -18,6 +18,12 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: [true, "Enter Password!!"],
       minlength: [8, "Password cannot be less than 8 characters"],
+    },
+    googleId: {
+      type:String
+    },
+    displayName: {
+      type:String
     }
 })
 const users = mongoose.model("users", userSchema)

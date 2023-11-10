@@ -6,10 +6,12 @@ const morgan=require('morgan')
 const bodyParser=require('body-parser')
 const session=require('express-session')
 const passport=require('passport')
+const User=require('../backend/models/user')
 require('./controllers/verify')(passport);
 const router=require('./routes/main')
 const connectDB = require('./config/db')
 dotenv.config({path:'./config/.env'})
+
 connectDB()
 
 const app=express()
@@ -57,7 +59,7 @@ app.get('/auth/google',
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/error' }),
   function(req, res) {
-    res.redirect('/success');
+    res.redirect('/');
   });
 
 const PORT=process.env.PORT||5100 
