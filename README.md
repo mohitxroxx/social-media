@@ -15,3 +15,14 @@ The "Create Account" page is an essential component of our website, allowing use
 This screenshot serves as a preview of the smooth and straightforward account creation experience we offer to our users.
 
 
+### Login Page
+
+![Login](client/public/screenshot2.png)
+
+The "Login" page is a crucial element of our website, providing a secure gateway for registered users to access their accounts. This screenshot highlights key features of the login experience:
+
+- *Credential Verification:* The page includes a secure login form where users can enter their registered email and password. Robust authentication mechanisms ensure the privacy and security of user accounts.
+
+- *Forgot Password Option:* In case users forget their passwords, our login page offers a "Forgot Password" link or button, guiding them through a secure process to reset and regain access to their accounts.
+
+This screenshot provides a glimpse into the user-friendly and secure login process we've designed to enhance user experience while prioritizing account security.
