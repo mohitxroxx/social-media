@@ -18,7 +18,32 @@ const Login = () => {
     mode: "onChange",
   });
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    try {
+      // Make a POST request to your Node.js backend to authenticate the user
+      const response = await fetch('http://Localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+
+    
+      const responseData = await response.json();
+
+      const authToken = responseData.authToken;
+
+      
+      console.log('Authentication Token:', authToken);
+    } catch (error) {
+      console.error('Login error:', error.message);
+    }
+  };
 
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);

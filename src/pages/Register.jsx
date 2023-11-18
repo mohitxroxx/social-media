@@ -19,7 +19,35 @@ const Register = () => {
     mode: "onChange",
   });
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    try {
+    
+      const response = await fetch('http://Localhost:3000/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Registration failed');
+      }
+
+      
+      const responseData = await response.json();
+
+
+      const apiKey = responseData.apiKey;
+
+    
+      console.log('API Key:', apiKey);
+    } catch (error) {
+      console.error('Registration error:', error.message);
+    }
+
+
+  };
 
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
