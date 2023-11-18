@@ -56,8 +56,14 @@ setIsSubmitting(true)
 try {
   const res =await apiRequest({
     url:"/auth/register",
-    data:data,
     method : "POST",
+    data: {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: data.password,
+    },
+   
   });
 
   console.log(res);
@@ -117,6 +123,7 @@ try {
               <TextInput
                 label='Last Name'
                 placeholder='Last Name'
+                name='lastname'
                 type='lastName'
                 styles='w-full'
                 register={register("lastName", {

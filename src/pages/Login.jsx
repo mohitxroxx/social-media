@@ -50,12 +50,16 @@ const Login = () => {
     // }
 
     setIsSubmitting(true)
-
+    
 try {
   const res =await apiRequest({
     url:"/auth/login",
-    data:data,
+    data: {
+      email: data.email,
+      password: data.password,
+    },
     method : "POST",
+    
   });
   console.log(res);
 //  if(res?.status ==="failed")
