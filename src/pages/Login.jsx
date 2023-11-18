@@ -10,7 +10,7 @@ import { CustomButton, Loading, TextInput } from "../components";
 import { BgImage } from "../assets";
 import { UserLogin } from "../redux/userSlice";
 import { apiRequest } from "../utils";
-
+import Home from "./Home"
 const Login = () => {
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +22,7 @@ const Login = () => {
   } = useForm({
     mode: "onChange",
   });
-
+  // const[login ,setlogin]=useState(false);
   const onSubmit = async (data) => {
     // try {
     //   // Make a POST request to your Node.js backend to authenticate the user
@@ -54,25 +54,29 @@ const Login = () => {
 try {
   const res =await apiRequest({
     url:"/auth/login",
-    data: {
+    data: { 
       email: data.email,
       password: data.password,
     },
     method : "POST",
     
   });
-  console.log(res);
-//  if(res?.status ==="failed")
-//  {
-//   setErrMsg(res);
-//  }else{
-//   setErrMsg("");
+  // console.log(res);
+ if(res?.status ==="failed")
+ {
+  setErrMsg(res);
+ }
+ else{
 
-//   const newData ={token: res?.token, ...res?.user};
-//   dispatch(UserLogin(newData));
-//   window.location.replace("/");
+  setErrMsg("");
+setIsSubmitting(true);
+  const newData ={token: res?.token, ...res?.user};
+  dispatch(UserLogin(newData));
+  console.log(res)
 
-// }
+  window.location.replace("/");
+
+}
 setIsSubmitting(false);}
 
 catch (error) {

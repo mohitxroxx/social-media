@@ -2,7 +2,7 @@ const Comments=require('../models/comment')
 const Posts=require('../models/post')
 const Users=require('../models/user')
 
-export const createPost = async (req, res, next) => {
+module.exports.createPost = async (req, res, next) => {
     try {
       const { userId } = req.body.user
       const { description, image } = req.body
@@ -29,7 +29,7 @@ export const createPost = async (req, res, next) => {
     }
   }
 
-  export const likePost = async (req, res, next) => {
+  module.exports.likePost = async (req, res, next) => {
     try {
       const { userId } = req.body.user
       const { id } = req.params
@@ -59,7 +59,7 @@ export const createPost = async (req, res, next) => {
   }
   
 
-  export const commentPost = async (req, res, next) => {
+  module.exports.commentPost = async (req, res, next) => {
     try {
       const { comment, from } = req.body
       const { userId } = req.body.user
@@ -82,7 +82,7 @@ export const createPost = async (req, res, next) => {
     }
   }
 
-  export const deletePost = async (req, res, next) => {
+  module.exports.deletePost = async (req, res, next) => {
     try {
       const { id } = req.params
       await Posts.findByIdAndDelete(id)

@@ -66,16 +66,16 @@ try {
    
   });
 
-  console.log(res);
-      //  if(res?.status === "failed")
-      //  {
-      //    setErrMsg(res);
-      //  }else{
-      //    setErrMsg(res);
-      //    setTimeout(()=>{
-      //      window.location.replace("/login");
-      //    },5000);
-      //  }
+  // console.log(res);
+       if(res?.status === "failed")
+       {
+         setErrMsg(res);
+       }else{
+         setErrMsg(res);
+         setTimeout(()=>{
+           window.location.replace("/login");
+         },5000);
+       }  
         setIsSubmitting(false);
        }
        catch (error) {
