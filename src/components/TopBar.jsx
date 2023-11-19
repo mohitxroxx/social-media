@@ -2,7 +2,7 @@ import React from 'react'
 import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector'
 import { TbSocial } from "react-icons/tb";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import TextInput from "./TextInput";
 import CustomButton from "./CustomButton";
 import { useForm } from "react-hook-form";
@@ -23,6 +23,12 @@ const TopBar = () => {
     const themeValue = theme === "light" ? "dark" : "light";
 
     dispatch(SetTheme(themeValue));
+  };
+  
+  const handleLogout = () => {
+   
+    dispatch(Logout());
+  //  window.location.replace('/register');
   };
 
   const handleSearch = async (data) => {};
@@ -67,7 +73,11 @@ const TopBar = () => {
 
         <div>
           <CustomButton
-            onClick={() => dispatch(Logout())}
+            onClick={handleLogout
+              // () => 
+              // dispatch(Logout())
+              
+            }
             title='Log Out'
             containerStyles='text-sm text-ascent-1 px-4 md:px-6 py-1 md:py-2 border border-[#666] rounded-full'
           />

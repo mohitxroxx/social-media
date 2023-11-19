@@ -22,7 +22,7 @@ const Login = () => {
   } = useForm({
     mode: "onChange",
   });
-  // const[login ,setlogin]=useState(false);
+  const[login ,setlogin]=useState(false);
   const onSubmit = async (data) => {
     // try {
     //   // Make a POST request to your Node.js backend to authenticate the user
@@ -62,21 +62,21 @@ try {
     
   });
   // console.log(res);
- if(res?.status ==="failed")
+ 
+ if(res?.status === 401 )
  {
   setErrMsg(res);
+  console.log("galat hai");
  }
- else{
-
+ else {
+  console.log("sachin")
   setErrMsg("");
-setIsSubmitting(true);
-  const newData ={token: res?.token, ...res?.user};
+const newData ={token: res?.token, ...res?.user};
   dispatch(UserLogin(newData));
   console.log(res)
-
   window.location.replace("/");
-
 }
+ 
 setIsSubmitting(false);}
 
 catch (error) {
@@ -84,6 +84,41 @@ catch (error) {
   setIsSubmitting(false);
 }
   };
+
+// const onSubmit = async (data) => {
+//   setIsSubmitting(true);
+
+//   try {
+//     const res = await apiRequest({
+//       url: "/auth/login",
+//       data: {
+//         email: data.email,
+//         password: data.password,
+//       },
+//       method: "POST",
+//     });
+
+//     if (res.status === 401) {
+//       setErrMsg("Invalid email or password");
+//     } else if (res.status === 200) { // Assuming 200 is a successful login status
+//       setErrMsg("");
+//       setIsSubmitting(true);
+      
+//       const newData = { token: res?.token, ...res?.user };
+//       dispatch(UserLogin(newData));
+      
+//       // Redirect to home page only on successful login
+//       window.location.replace("/");
+//     } else {
+//       setErrMsg("An unexpected error occurred");
+//     }
+//     setIsSubmitting(false);
+//   } catch (error) {
+//     console.log(error);
+//     setIsSubmitting(false);
+//   }
+// };
+
 
   
   return (
