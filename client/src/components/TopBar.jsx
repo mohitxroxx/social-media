@@ -28,7 +28,7 @@ const TopBar = () => {
   const handleLogout = () => {
    
     dispatch(Logout());
-  //  window.location.replace('/register');
+   window.location.replace('/register');
   };
 
   const handleSearch = async (data) => {};
