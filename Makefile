@@ -1,3 +1,3 @@
 serverrun:
-	cd backend && npm run build
+	cd backend && npm run start
 
